@@ -1,0 +1,15 @@
+-version
+-author
+-tag email
+-tag prgm.usage
+-tag assignment.number
+-notree
+-noindex
+-nohelp
+-nodeprecatedlist
+-linksource
+-doctitle 'CISC 190 Documentation'
+-windowtitle 'Javadoc Demo Program for Week 15'
+-header 'Program by<br>Duy Pham<br>CISC190 Java'
+-footer 'Spring 2014 - CISC 190<br>San Diego Miramar College<br>10440 Black Mtn Road<br>San Diego, CA 92126'
+-bottom 'Copyright 2014 by Duy Pham, Email: <a href="mailto:pnad0911@gmail.com">pnad0911@gmail.com</a>'

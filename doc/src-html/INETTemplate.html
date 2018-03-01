@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/**<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * @version 1.01 - 05/23/2014<a name="line.2"></a>
+<span class="sourceLineNo">003</span> * @author Duy Pham<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * @see &lt;a href='http://jcouture.net/cisc190/A19015.php'&gt;Program Specification&lt;/a&gt;<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * @see &lt;br&gt;&lt;a href='http://docs.oracle.com/javase/7/docs/technotes/guides/Javadoc/index.html'&gt;Javadoc Documentation&lt;/a&gt;<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * @email pnad0911@gmail.com<a name="line.6"></a>
+<span class="sourceLineNo">007</span> * @prgm.usage A19015<a name="line.7"></a>
+<span class="sourceLineNo">008</span> * @assignment.number A19015<a name="line.8"></a>
+<span class="sourceLineNo">009</span> */<a name="line.9"></a>
+<span class="sourceLineNo">010</span>public interface INETTemplate<a name="line.10"></a>
+<span class="sourceLineNo">011</span>{<a name="line.11"></a>
+<span class="sourceLineNo">012</span>    /**<a name="line.12"></a>
+<span class="sourceLineNo">013</span>     * Accept a full file path and name and determine if it exists on disk.<a name="line.13"></a>
+<span class="sourceLineNo">014</span>     * If it does, return a true. If it does not exist, return a false.<a name="line.14"></a>
+<span class="sourceLineNo">015</span>     * @param strFileName -<a name="line.15"></a>
+<span class="sourceLineNo">016</span>     * @return<a name="line.16"></a>
+<span class="sourceLineNo">017</span>     */<a name="line.17"></a>
+<span class="sourceLineNo">018</span>    public Boolean fileExist(String strFileName);<a name="line.18"></a>
+<span class="sourceLineNo">019</span><a name="line.19"></a>
+<span class="sourceLineNo">020</span>    /**<a name="line.20"></a>
+<span class="sourceLineNo">021</span>     * * Accept a full file path and name as a parameter and<a name="line.21"></a>
+<span class="sourceLineNo">022</span>     * check to see if it exists using the fileExists method.<a name="line.22"></a>
+<span class="sourceLineNo">023</span>     * If it does exist, read the file from disk and return the contents as a string.<a name="line.23"></a>
+<span class="sourceLineNo">024</span>     * If the file does not exist, return a null.<a name="line.24"></a>
+<span class="sourceLineNo">025</span>     * @param strFileName - a full file path and name<a name="line.25"></a>
+<span class="sourceLineNo">026</span>     * @return - Contents from the file as a string.<a name="line.26"></a>
+<span class="sourceLineNo">027</span>     * @throws java.lang.Exception<a name="line.27"></a>
+<span class="sourceLineNo">028</span>     */<a name="line.28"></a>
+<span class="sourceLineNo">029</span>    java.lang.String getFromFile(java.lang.String strFileName)<a name="line.29"></a>
+<span class="sourceLineNo">030</span>            throws java.lang.Exception;<a name="line.30"></a>
+<span class="sourceLineNo">031</span><a name="line.31"></a>
+<span class="sourceLineNo">032</span>    /**<a name="line.32"></a>
+<span class="sourceLineNo">033</span>     * Accept an HTML web page as a string and<a name="line.33"></a>
+<span class="sourceLineNo">034</span>     * extract the data that is between the PRE tags using the getRegEx function.<a name="line.34"></a>
+<span class="sourceLineNo">035</span>     * If nothing is found, return a null.<a name="line.35"></a>
+<span class="sourceLineNo">036</span>     * @param strPage - a normal HTML page as a string<a name="line.36"></a>
+<span class="sourceLineNo">037</span>     * @return - Extracted Contents - only the data between two PRE tags or null.<a name="line.37"></a>
+<span class="sourceLineNo">038</span>     */<a name="line.38"></a>
+<span class="sourceLineNo">039</span>    public String getPREData(java.lang.String strPage);<a name="line.39"></a>
+<span class="sourceLineNo">040</span><a name="line.40"></a>
+<span class="sourceLineNo">041</span>    /**<a name="line.41"></a>
+<span class="sourceLineNo">042</span>     * Extract a small string from a larger one using a Regular Expression and<a name="line.42"></a>
+<span class="sourceLineNo">043</span>     * the pattern specified as a parameter.<a name="line.43"></a>
+<span class="sourceLineNo">044</span>     * If nothing is found, return a null.<a name="line.44"></a>
+<span class="sourceLineNo">045</span>     * @param strInput - large string<a name="line.45"></a>
+<span class="sourceLineNo">046</span>     * @param strPattern - formatted Regular Expression<a name="line.46"></a>
+<span class="sourceLineNo">047</span>     * @return - a small string that is the result of the Reg Ex search<a name="line.47"></a>
+<span class="sourceLineNo">048</span>     */<a name="line.48"></a>
+<span class="sourceLineNo">049</span>    public String getRegEx(java.lang.String strInput, java.lang.String strPattern);<a name="line.49"></a>
+<span class="sourceLineNo">050</span><a name="line.50"></a>
+<span class="sourceLineNo">051</span><a name="line.51"></a>
+<span class="sourceLineNo">052</span>    /**<a name="line.52"></a>
+<span class="sourceLineNo">053</span>     *  Accept a string URL, create a string using the StringBuilder class and<a name="line.53"></a>
+<span class="sourceLineNo">054</span>     * return it as one long string. If the page does not exist, return a null.<a name="line.54"></a>
+<span class="sourceLineNo">055</span>     * @param strURL - URL as a string<a name="line.55"></a>
+<span class="sourceLineNo">056</span>     * @return -  the entire web page as a string<a name="line.56"></a>
+<span class="sourceLineNo">057</span>     * @throws java.lang.Exception<a name="line.57"></a>
+<span class="sourceLineNo">058</span>     */<a name="line.58"></a>
+<span class="sourceLineNo">059</span>    java.lang.String getURLRaw(java.lang.String strURL)<a name="line.59"></a>
+<span class="sourceLineNo">060</span>            throws java.lang.Exception;<a name="line.60"></a>
+<span class="sourceLineNo">061</span><a name="line.61"></a>
+<span class="sourceLineNo">062</span>    /**<a name="line.62"></a>
+<span class="sourceLineNo">063</span>     * Accept a string and convert the whole string into lower case then<a name="line.63"></a>
+<span class="sourceLineNo">064</span>     * upper case only the first letter of each word.<a name="line.64"></a>
+<span class="sourceLineNo">065</span>     *<a name="line.65"></a>
+<span class="sourceLineNo">066</span>     *<a name="line.66"></a>
+<span class="sourceLineNo">067</span>     * @param strInput - string to be converted<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     * @return - string with every word's first letter capitalized<a name="line.68"></a>
+<span class="sourceLineNo">069</span>     */<a name="line.69"></a>
+<span class="sourceLineNo">070</span>    public String properCase(String strInput);<a name="line.70"></a>
+<span class="sourceLineNo">071</span><a name="line.71"></a>
+<span class="sourceLineNo">072</span><a name="line.72"></a>
+<span class="sourceLineNo">073</span>    /**<a name="line.73"></a>
+<span class="sourceLineNo">074</span>     * Accept a string and save it to a local file<a name="line.74"></a>
+<span class="sourceLineNo">075</span>     * @param strFileName - a full file path and name.<a name="line.75"></a>
+<span class="sourceLineNo">076</span>     * @param strContent - string to be saved to disk.<a name="line.76"></a>
+<span class="sourceLineNo">077</span>     * @throws java.lang.Exception<a name="line.77"></a>
+<span class="sourceLineNo">078</span>     */<a name="line.78"></a>
+<span class="sourceLineNo">079</span>    void saveToFile(java.lang.String strFileName,<a name="line.79"></a>
+<span class="sourceLineNo">080</span>                    java.lang.String strContent)<a name="line.80"></a>
+<span class="sourceLineNo">081</span>            throws java.lang.Exception;<a name="line.81"></a>
+<span class="sourceLineNo">082</span><a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>}<a name="line.84"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>
